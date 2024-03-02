@@ -38,10 +38,8 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  continueToCryptoX() {
-    // Add functionality for continuing to CryptoX here
-    print("Continue to CryptoX pressed");
-  }
+   
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [ Colors.orange, Colors.black],
+            colors: [ Color.fromARGB(255, 6, 0, 40), Color.fromARGB(255, 6, 0, 40)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -81,11 +79,7 @@ class _LoginPageState extends State<LoginPage> {
               Image.asset(
                 'assets/images/metamask.png',
                 fit: BoxFit.fitHeight,
-              ),
-              ElevatedButton(
-                onPressed: () => loginUsingMetamask(context),
-                child: const Text("Connect with Metamask"),
-              ),
+              ),            
             ],
           ),
         ),
@@ -95,11 +89,12 @@ class _LoginPageState extends State<LoginPage> {
         padding: EdgeInsets.all(16),
         color: Colors.transparent,
         child: ElevatedButton(
-          onPressed: continueToCryptoX,
-          child: const Text("Continue to CryptoX"),
+          onPressed: () => loginUsingMetamask(context),
+          child: const Text("Connect with Metamask"),
           style: ElevatedButton.styleFrom(
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 24),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(16),
             ),
           ),
         ),
